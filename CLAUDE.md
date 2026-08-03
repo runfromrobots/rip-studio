@@ -43,7 +43,7 @@ Real:
 Placeholder / pending:
 
 * The arboretum project (`/work/arboretum.html`) — name, location, and all details are placeholder text pending the site owner's decisions. Don't invent a name for it.
-* All photography — no real photos yet anywhere on this site; the tombstone hero is pure CSS, no image assets exist in `images/` yet.
+* All photography — no real photos yet anywhere on this site; the tombstone hero is pure CSS. `images/` and `images/work/` exist as empty scaffolding (matching the `images/`, `images/logos/`, etc. convention from mikewkennedy.com) but hold no real assets yet — add subfolders as needed per new image category, don't flatten everything into one folder.
 * Domain: **rip-studio.com** (primary) and **rip-studios.com** (secondary/redirect) have been decided on but not yet purchased. Site currently deploys to a `*.vercel.app` preview URL only. Don't reference the custom domain as live anywhere in copy until it's actually purchased and connected.
 
 ## Decisions already made — don't relitigate
