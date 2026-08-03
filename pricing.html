@@ -105,15 +105,47 @@
   <section id="reserve" class="contact">
     <div class="section-head">
       <p class="eyebrow">Ready when you are</p>
-      <h2>Reserve your build</h2>
+      <h2>Tell us about your business</h2>
     </div>
-    <p>Pay your build fee to lock in the founding-client rate and get on the calendar. We'll reach out within a day to kick off intake.</p>
-    <div class="hero-actions">
-      <!-- TODO: replace with a real hosted payment link (Stripe Payment Link, PayPal.me, Venmo, or Square) once one is set up.
-           Mailto is a working, zero-setup placeholder in the meantime, not the final CTA. -->
-      <a href="mailto:mikewkennedy@gmail.com?subject=Reserve%20my%20RIP%20Studio%20build&body=Business%20name%3A%0AWhat%20we%20do%3A%0AI'd%20like%20to%20reserve%20the%20%24250%20founding-client%20build%20rate." class="btn btn-primary">Reserve your build &mdash; $250</a>
-    </div>
-    <p class="reserve-note">Prefer to pay by Stripe, PayPal, or Venmo? Let us know and we'll add a direct payment link here.</p>
+    <p>Fill this out and we'll follow up within a day to talk scope and lock in your founding-client rate. Once we're aligned, reserving your build slot is a quick $250 over Venmo.</p>
+
+    <form id="reserve-form" class="reserve-form">
+      <div class="form-grid">
+        <div class="form-field">
+          <label for="f-business">Business name</label>
+          <input type="text" id="f-business" name="business" required>
+        </div>
+        <div class="form-field">
+          <label for="f-name">Your name</label>
+          <input type="text" id="f-name" name="name" required>
+        </div>
+        <div class="form-field">
+          <label for="f-email">Email</label>
+          <input type="email" id="f-email" name="email" required>
+        </div>
+        <div class="form-field">
+          <label for="f-phone">Phone (optional)</label>
+          <input type="tel" id="f-phone" name="phone">
+        </div>
+        <div class="form-field full">
+          <label for="f-need">What do you need?</label>
+          <select id="f-need" name="need">
+            <option>A new website (we don't have one)</option>
+            <option>A redesign of an existing site</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+        <div class="form-field full">
+          <label for="f-message">Tell us about your business</label>
+          <textarea id="f-message" name="message" placeholder="What do you do, where are you located, and what's your current site (if any)?" required></textarea>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Send inquiry</button>
+      <p class="reserve-note">This opens your email app with the details filled in, ready to send.</p>
+    </form>
+
+    <!-- TODO: replace YOUR-VENMO-USERNAME with the real Venmo handle once set up. -->
+    <p class="venmo-note">Ready to lock in the founding rate right now? Venmo <strong>$250 to @YOUR-VENMO-USERNAME</strong> with your business name in the note &mdash; we'll follow up either way.</p>
   </section>
 
 </main>
