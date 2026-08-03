@@ -37,9 +37,10 @@ Real:
 * RIP Studio (Michael Kennedy) is based in New York's Mohawk Valley — same region as the current SMB prospects (Canajoharie, Fort Plain), referenced in the hero eyebrow and the About section on `index.html`.
 * The About ("Who's Rip") section links to mikewkennedy.com and cites **15 years** of UX research experience. Note: mikewkennedy.com's own CLAUDE.md currently states "13+ years" — this discrepancy hasn't been reconciled and was called out, not silently fixed. Flag it to the site owner before changing either number; don't assume which one is current.
 
+* The Venmo handle on `pricing.html` (`#reserve` section, `.venmo-note`) — real: `@mikewkennedy`, linked to `https://venmo.com/mikewkennedy?txn=pay&amount=250&note=...` which prefills the $250 amount and a note on mobile where the Venmo app intercepts the link.
+
 Placeholder / pending:
 
-* **The Venmo handle on `pricing.html`** (`#reserve` section, `.venmo-note`) is a literal placeholder, `@YOUR-VENMO-USERNAME` — marked with an HTML comment in the file. Replace with the real handle as soon as the site owner provides it; don't invent or guess one.
 * The arboretum project (`/work/arboretum.html`) — name, location, and all details are placeholder text pending the site owner's decisions. Don't invent a name for it.
 * All photography — no real photos yet anywhere on this site; the tombstone hero is pure CSS, no image assets exist in `images/` yet.
 * Domain: **rip-studio.com** (primary) and **rip-studios.com** (secondary/redirect) have been decided on but not yet purchased. Site currently deploys to a `*.vercel.app` preview URL only. Don't reference the custom domain as live anywhere in copy until it's actually purchased and connected.

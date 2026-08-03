@@ -412,3 +412,5 @@ footer a:hover { color: var(--flash); }
   padding-top: var(--space-4);
 }
 .venmo-note strong { color: var(--flash-2); }
+.venmo-note a { text-decoration: underline; }
+.venmo-note a:hover { color: var(--paper); }
