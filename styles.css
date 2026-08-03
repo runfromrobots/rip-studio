@@ -216,11 +216,51 @@ section { padding: var(--space-7) 0; }
   background: var(--paper-raised);
   border: 1px solid var(--ink);
   border-radius: var(--radius);
-  padding: var(--space-5);
+  padding: 0;
+  overflow: hidden;
   position: relative;
   transition: transform var(--motion), box-shadow var(--motion);
 }
 .flash-card:hover { transform: translateY(-4px); box-shadow: 6px 6px 0 var(--ink); }
+.flash-card-body { padding: var(--space-5); }
+
+/* Live preview thumbnails — scaled-down iframe of the real site, so it updates itself */
+.flash-thumb, .project-preview {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+  background: var(--paper);
+}
+.flash-thumb { border-bottom: 1px solid var(--ink); }
+.project-preview {
+  border: 1px solid var(--ink);
+  border-radius: var(--radius);
+  margin: var(--space-5) 0 0;
+}
+.flash-thumb iframe, .project-preview iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 0;
+  pointer-events: none;
+  transform-origin: top left;
+}
+.flash-thumb iframe { width: 400%; height: 400%; transform: scale(0.25); }
+.project-preview iframe { width: 133.333%; height: 133.333%; transform: scale(0.75); }
+.thumb-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  border: 1px dashed var(--ink-soft);
+  box-sizing: border-box;
+}
+
 .flash-number {
   font-family: var(--font-mono);
   font-size: 0.75rem;
