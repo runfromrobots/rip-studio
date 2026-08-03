@@ -1,0 +1,299 @@
+/* RIP Studio — design tokens
+   Palette: flash-sheet paper, ink black, one fluorescent accent (+ one sparing secondary).
+   Type: blackletter for the wordmark/tombstone only, bold condensed poster face for headers,
+   plain sans for body, mono for flash-sheet numbering and labels. */
+
+:root {
+  --paper: #EFE6D3;
+  --paper-raised: #E7DCC4;
+  --ink: #16130F;
+  --ink-soft: #4A443B;
+  --flash: #FF2F5E;       /* primary accent — flash-sheet red, pushed fluorescent */
+  --flash-2: #C6FF3D;     /* secondary accent — acid green, used sparingly */
+  --line: rgba(22, 19, 15, 0.14);
+
+  --font-tombstone: 'UnifrakturCook', serif;
+  --font-display: 'Anton', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 1rem;
+  --space-4: 1.5rem;
+  --space-5: 2rem;
+  --space-6: 3rem;
+  --space-7: 4.5rem;
+  --space-8: 7rem;
+
+  --max-width: 1200px;
+  --radius: 4px;
+  --motion: 160ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.55;
+  color-scheme: light;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+
+.wrap {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-4);
+}
+
+/* Header */
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4) var(--space-4);
+  border-bottom: 1px solid var(--line);
+}
+.brand {
+  font-family: var(--font-tombstone);
+  font-size: 1.75rem;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  color: var(--ink);
+}
+.nav { display: flex; align-items: center; gap: var(--space-5); }
+.nav-links { display: flex; gap: var(--space-4); list-style: none; margin: 0; padding: 0; }
+.nav-links a {
+  text-decoration: none;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.nav-links a:hover { color: var(--flash); }
+
+/* Buttons — flat fill only */
+.btn {
+  display: inline-block;
+  padding: 0.9rem 1.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: var(--radius);
+  border: none;
+  cursor: pointer;
+  transition: transform var(--motion), background var(--motion);
+}
+.btn-primary { background: var(--flash); color: var(--paper); }
+.btn-secondary { background: var(--ink); color: var(--paper); }
+.btn:hover { transform: translateY(-2px); }
+.btn-primary:hover { background: #E01E4A; }
+.btn-secondary:hover { background: #000; }
+
+/* Hero */
+.hero {
+  padding: var(--space-8) 0 var(--space-7);
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: var(--space-6);
+  align-items: center;
+}
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; text-align: center; }
+  .hero-actions { justify-content: center; }
+  .tombstone { margin: 0 auto; }
+}
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--flash);
+  margin: 0 0 var(--space-3);
+}
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.75rem, 6vw, 4.5rem);
+  line-height: 1.02;
+  margin: 0 0 var(--space-4);
+  letter-spacing: 0.01em;
+}
+.hero p { font-size: 1.125rem; color: var(--ink-soft); max-width: 46ch; margin: 0 0 var(--space-5); }
+.hero-actions { display: flex; gap: var(--space-2); }
+
+/* Tombstone motif */
+.tombstone {
+  width: 260px;
+  height: 320px;
+  background: var(--paper-raised);
+  border: 3px solid var(--ink);
+  border-radius: 130px 130px 12px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  position: relative;
+}
+.tombstone::before {
+  content: "";
+  position: absolute;
+  top: 34px; left: 16px; right: 16px;
+  border-top: 2px solid var(--line);
+}
+.tombstone-rip {
+  font-family: var(--font-tombstone);
+  font-size: 2.75rem;
+  line-height: 1;
+  margin-top: var(--space-3);
+}
+.tombstone-sub {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  text-align: center;
+  padding: 0 var(--space-3);
+}
+.tombstone-banner {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: var(--flash);
+  color: var(--paper);
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+}
+
+/* Section headings */
+section { padding: var(--space-7) 0; }
+.section-head { margin-bottom: var(--space-6); }
+.section-head h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  margin: var(--space-2) 0 0;
+}
+
+/* Services */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+}
+@media (max-width: 900px) { .services-grid { grid-template-columns: 1fr; } }
+.service-card {
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: var(--space-5);
+}
+.service-card h3 { font-family: var(--font-display); font-size: 1.25rem; margin: 0 0 var(--space-2); }
+.service-card p { color: var(--ink-soft); margin: 0; font-size: 0.95rem; }
+
+/* Work — flash sheet cards */
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+}
+@media (max-width: 900px) { .work-grid { grid-template-columns: 1fr; } }
+.flash-card {
+  display: block;
+  text-decoration: none;
+  color: var(--ink);
+  background: var(--paper-raised);
+  border: 1px solid var(--ink);
+  border-radius: var(--radius);
+  padding: var(--space-5);
+  position: relative;
+  transition: transform var(--motion), box-shadow var(--motion);
+}
+.flash-card:hover { transform: translateY(-4px); box-shadow: 6px 6px 0 var(--ink); }
+.flash-number {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  color: var(--flash);
+  display: block;
+  margin-bottom: var(--space-2);
+}
+.flash-card h3 { font-family: var(--font-display); font-size: 1.35rem; margin: 0 0 var(--space-2); }
+.flash-card p { color: var(--ink-soft); font-size: 0.9375rem; margin: 0 0 var(--space-3); }
+.status-tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.6rem;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+}
+.status-tag.is-progress { background: var(--flash); color: var(--paper); border-color: var(--flash); }
+.status-tag.is-concept { background: transparent; }
+
+/* About */
+.about { max-width: 60ch; }
+.about p { font-size: 1.0625rem; color: var(--ink-soft); }
+
+/* Contact */
+.contact {
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: var(--radius);
+  padding: var(--space-6) var(--space-5);
+}
+.contact .section-head h2 { color: var(--paper); }
+.contact p { color: #C9C2B4; max-width: 50ch; }
+.contact .btn-primary { background: var(--flash); color: var(--ink); }
+.contact .btn-secondary { background: var(--flash-2); color: var(--ink); }
+
+/* Footer */
+footer {
+  border-top: 1px solid var(--line);
+  padding: var(--space-5) 0;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--ink-soft);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+footer a { color: var(--ink-soft); }
+footer a:hover { color: var(--flash); }
+
+/* Project detail pages */
+.project-hero { padding: var(--space-7) 0 var(--space-6); border-bottom: 1px solid var(--line); }
+.project-hero h1 { font-family: var(--font-display); font-size: clamp(2.25rem, 5vw, 3.25rem); margin: var(--space-3) 0; }
+.fact-list { list-style: none; padding: 0; margin: var(--space-4) 0 0; display: flex; flex-wrap: wrap; gap: var(--space-5); }
+.fact-list li { font-family: var(--font-mono); font-size: 0.875rem; }
+.fact-list span { display: block; color: var(--ink-soft); font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 0.06em; }
+.placeholder-note {
+  background: var(--paper-raised);
+  border: 1px dashed var(--ink-soft);
+  border-radius: var(--radius);
+  padding: var(--space-4);
+  font-size: 0.9375rem;
+  color: var(--ink-soft);
+  margin: var(--space-5) 0;
+}
+.back-link { display: inline-block; margin-top: var(--space-5); font-family: var(--font-mono); font-size: 0.8125rem; text-decoration: none; color: var(--ink-soft); }
+.back-link:hover { color: var(--flash); }
+.project-copy { max-width: 60ch; color: var(--ink-soft); font-size: 1.0625rem; }
+.project-cta { margin-top: var(--space-4); }
