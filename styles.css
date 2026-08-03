@@ -149,17 +149,10 @@ a { color: inherit; }
   gap: var(--space-2);
   position: relative;
 }
-.tombstone::before {
-  content: "";
-  position: absolute;
-  top: 34px; left: 16px; right: 16px;
-  border-top: 2px solid rgba(255, 255, 255, 0.18);
-}
 .tombstone-rip {
   font-family: var(--font-tombstone);
   font-size: 3.25rem;
   line-height: 1;
-  margin-top: var(--space-3);
   color: #FFFFFF;
 }
 .tombstone-sub {
