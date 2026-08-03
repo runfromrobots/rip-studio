@@ -32,7 +32,7 @@ Plain HTML/CSS/JS. No React, no bundler, no dependencies. Fonts via Google Fonts
 Real:
 
 * **Iroquois Lanes is live**, built in its own repo (`runfromrobots/iroquois-lanes`) and deployed at `https://iroquois-lanes.vercel.app` — confirmed working (home, bowling & leagues, menu, "Until Then Auctions," about, contact). `/work/iroquois-lanes.html` here now links out to it (`.status-tag.is-live`, a "Visit the Live Site" button) instead of framing it as directory-sourced placeholder data. The address/phone facts on this page were the pre-launch placeholder facts, kept for reference; the live site is the source of truth now.
-* **The Orboretum** (real name, not a typo for "arboretum") has its own repo (`runfromrobots/orboretum`) with real content — a 200-acre property in Sprakers, NY pursuing ArbNet Level I accreditation — but as of this writing it is **not yet deployed**: the repo's own README documents an expected `orboretum.vercel.app` URL, but that 404s, and a few plausible variations were tried with no luck. Don't link to it from this site until a real, verified live URL is confirmed.
+* **The Orboretum is live** (real name, not a typo for "arboretum"), built in its own repo (`runfromrobots/orboretum`) and deployed at `https://orboretum.vercel.app` — confirmed working (home, visit, collections, education, history, contact). A 200-acre property in Sprakers, NY pursuing ArbNet Level I accreditation. `/work/orboretum.html` here (renamed from the old placeholder `arboretum.html`) now links out to it (`.status-tag.is-live`, "Visit the Live Site").
 * **MK Soap**'s redesign repo (`runfromrobots/mk-soap`) exists but is **completely empty** (zero commits) as of this writing — nothing has been built there yet, despite `/work/mk-soap.html` here describing it as a concept in progress. Don't imply it's further along than that.
 * MK Soap's current storefront link (mksoap.com) on `/work/mk-soap.html` — real, live link.
 * The contact email (mikewkennedy@gmail.com) — real, but likely a placeholder until a studio-specific address (e.g. hello@rip-studio.com) exists once the domain is registered.
@@ -44,7 +44,6 @@ Real:
 
 Placeholder / pending:
 
-* The arboretum project (`/work/arboretum.html`) — name, location, and all details are placeholder text pending the site owner's decisions. Don't invent a name for it.
 * All photography — no real photos yet anywhere on this site; the tombstone hero is pure CSS. `images/` and `images/work/` exist as empty scaffolding (matching the `images/`, `images/logos/`, etc. convention from mikewkennedy.com) but hold no real assets yet — add subfolders as needed per new image category, don't flatten everything into one folder.
 * Domain: **rip-studio.com** (primary) and **rip-studios.com** (secondary/redirect) have been decided on but not yet purchased. Site currently deploys to a `*.vercel.app` preview URL only. Don't reference the custom domain as live anywhere in copy until it's actually purchased and connected.
 
