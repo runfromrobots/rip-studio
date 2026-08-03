@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const body = [
         `Business: ${data.get('business')}`,
         `Contact: ${data.get('name')}`,
-        `Email: ${data.get('email')}`,
+        `E-mail: ${data.get('email')}`,
         `Phone: ${data.get('phone') || 'n/a'}`,
         `Looking for: ${data.get('need')}`,
         '',

@@ -46,6 +46,11 @@ Placeholder / pending:
 * All photography — no real photos yet anywhere on this site; the tombstone hero is pure CSS. `images/` and `images/work/` exist as empty scaffolding (matching the `images/`, `images/logos/`, etc. convention from mikewkennedy.com) but hold no real assets yet — add subfolders as needed per new image category, don't flatten everything into one folder.
 * Domain: **rip-studio.com** (primary) and **rip-studios.com** (secondary/redirect) have been decided on but not yet purchased. Site currently deploys to a `*.vercel.app` preview URL only. Don't reference the custom domain as live anywhere in copy until it's actually purchased and connected.
 
+## Conventions
+
+* **Title Case for UI Labels**: buttons (`.btn`), eyebrows (`.eyebrow`), form field labels (`.form-field label`), price card labels (`.price-card-label`), status tags (`.status-tag`), and the back-link all use title case ("Start a Project," "Get in Touch," "Business Name"), not sentence case. Minor words (a, the, in, of, to) stay lowercase mid-phrase. This does **not** extend to `<h1>`/`<h2>` headline copy ("Rest assured.", "Design that earns its keep") or body prose/placeholder text, which stay in their existing sentence-case editorial voice — those are deliberately different registers. (One exception exists as of this writing: `pricing.html`'s "Tell Us About Your Business" is used verbatim as both the `#reserve` section's `<h2>` and the message textarea's label, so titling one titled both — pre-existing content repetition, not something to "fix" by de-casing just the heading.)
+* **"E-mail," hyphenated**, not "email," everywhere in visible site copy and in the JS-generated inquiry e-mail body (`script.js`) — a deliberate spelling choice by the site owner. This does **not** apply to HTML technical attributes (`type="email"`, `name="email"`, `id="f-email"`) or the `mailto:` scheme itself, which must stay as-is for the form/links to keep working.
+
 ## Decisions already made — don't relitigate
 
 * Separate repo per site is the standing rule for this whole line of business — this repo (RIP Studio) is the agency/showcase site only; each real SMB client build gets its own repo, not a folder in this one.
