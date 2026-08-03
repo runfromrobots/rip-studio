@@ -243,6 +243,7 @@ section { padding: var(--space-7) 0; }
 }
 .status-tag.is-progress { background: var(--flash); color: var(--paper); border-color: var(--flash); }
 .status-tag.is-concept { background: transparent; }
+.status-tag.is-live { background: var(--flash-2); color: var(--ink); border-color: var(--flash-2); }
 
 /* About */
 .about { max-width: 60ch; }
