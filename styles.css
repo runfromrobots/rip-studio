@@ -8,6 +8,7 @@
   --paper-raised: #E7DCC4;
   --ink: #16130F;
   --ink-soft: #4A443B;
+  --stone: #3B3934;       /* tombstone fill — dark warm gray, no stroke */
   --flash: #FF2F5E;       /* primary accent — flash-sheet red, pushed fluorescent */
   --flash-2: #C6FF3D;     /* secondary accent — acid green, used sparingly */
   --line: rgba(22, 19, 15, 0.14);
@@ -138,8 +139,8 @@ a { color: inherit; }
 .tombstone {
   width: 260px;
   height: 320px;
-  background: var(--paper-raised);
-  border: 3px solid var(--ink);
+  background: var(--stone);
+  border: none;
   border-radius: 130px 130px 12px 12px;
   display: flex;
   flex-direction: column;
@@ -152,20 +153,21 @@ a { color: inherit; }
   content: "";
   position: absolute;
   top: 34px; left: 16px; right: 16px;
-  border-top: 2px solid var(--line);
+  border-top: 2px solid rgba(255, 255, 255, 0.18);
 }
 .tombstone-rip {
   font-family: var(--font-tombstone);
-  font-size: 2.75rem;
+  font-size: 3.25rem;
   line-height: 1;
   margin-top: var(--space-3);
+  color: #FFFFFF;
 }
 .tombstone-sub {
   font-family: var(--font-mono);
   font-size: 0.6875rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--ink-soft);
+  color: rgba(255, 255, 255, 0.72);
   text-align: center;
   padding: 0 var(--space-3);
 }
