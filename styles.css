@@ -297,3 +297,76 @@ footer a:hover { color: var(--flash); }
 .back-link:hover { color: var(--flash); }
 .project-copy { max-width: 60ch; color: var(--ink-soft); font-size: 1.0625rem; }
 .project-cta { margin-top: var(--space-4); }
+
+/* Pricing page */
+.pricing-hero { padding: var(--space-8) 0 var(--space-6); text-align: center; }
+.pricing-hero h1 { font-family: var(--font-display); font-size: clamp(2.5rem, 6vw, 3.75rem); margin: var(--space-3) 0; }
+.pricing-hero p { max-width: 56ch; margin: 0 auto; color: var(--ink-soft); font-size: 1.125rem; }
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-5);
+  align-items: stretch;
+}
+@media (max-width: 900px) { .pricing-grid { grid-template-columns: 1fr; } }
+
+.price-card {
+  background: var(--paper-raised);
+  border: 2px solid var(--ink);
+  border-radius: var(--radius);
+  padding: var(--space-6) var(--space-5);
+  display: flex;
+  flex-direction: column;
+}
+.price-card-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--flash);
+  margin: 0 0 var(--space-2);
+}
+.price-card h3 { font-family: var(--font-display); font-size: 1.75rem; margin: 0 0 var(--space-3); }
+.price-row { display: flex; align-items: baseline; gap: var(--space-3); margin-bottom: var(--space-2); }
+.price-tag { font-family: var(--font-display); font-size: 2.75rem; }
+.price-strike { font-family: var(--font-mono); font-size: 1.125rem; color: var(--ink-soft); text-decoration: line-through; }
+.price-period { font-family: var(--font-mono); font-size: 0.875rem; color: var(--ink-soft); }
+.price-note { font-size: 0.9375rem; color: var(--ink-soft); margin: 0 0 var(--space-4); }
+
+.feature-list { list-style: none; margin: 0 0 var(--space-5); padding: 0; flex-grow: 1; }
+.feature-list li {
+  font-size: 0.9375rem;
+  padding: 0.5rem 0;
+  border-top: 1px solid var(--line);
+  display: flex;
+  gap: var(--space-2);
+}
+.feature-list li:first-child { border-top: none; }
+.feature-list li::before { content: "\2713"; color: var(--flash); font-weight: bold; flex-shrink: 0; }
+
+.scope-note {
+  background: var(--paper-raised);
+  border: 1px dashed var(--ink-soft);
+  border-radius: var(--radius);
+  padding: var(--space-5);
+  font-size: 0.9375rem;
+  color: var(--ink-soft);
+}
+.scope-note strong { color: var(--ink); }
+
+.trust-strip {
+  display: flex;
+  gap: var(--space-5);
+  flex-wrap: wrap;
+}
+.trust-item { flex: 1 1 260px; }
+.trust-item h4 { font-family: var(--font-display); font-size: 1.0625rem; margin: 0 0 var(--space-2); }
+.trust-item p { font-size: 0.9375rem; color: var(--ink-soft); margin: 0; }
+
+.reserve-note {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: #C9C2B4;
+  margin-top: var(--space-4);
+}

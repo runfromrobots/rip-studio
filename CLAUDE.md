@@ -22,7 +22,8 @@ Plain HTML/CSS/JS. No React, no bundler, no dependencies. Fonts via Google Fonts
 * **Work section uses flash-sheet numbering** (`.flash-number`, "No. 001", "No. 002"...) as the organizing device for the showcase/case-study grid. This is the mechanism for "a collection that updates as we go" — adding a new client project is adding the next numbered card plus its detail page under `/work/`, not a redesign.
 * **Buttons**: flat fill only, no outline/ghost style, matching the same convention validated on mikewkennedy.com. `.btn-primary` is `--flash` fill, `.btn-secondary` is `--ink` fill; the dark `.contact` section swaps to `--flash`/`--flash-2` fills since the background is already dark.
 * **No dark-mode/light-mode toggle** — this site's whole identity (cream flash-sheet paper background) doesn't have an inverse "dark theme" the way the hacker-themed personal site does. Don't add one without being asked.
-* Pricing numbers are deliberately kept off this page (services section describes the flat-fee/flat-monthly model in words, not digits) — the sell is through the work and a direct conversation, not a price table. Don't add specific dollar amounts to the homepage without being asked.
+* Pricing numbers are deliberately kept off the homepage (services section describes the flat-fee/flat-monthly model in words, not digits) — the sell there is through the work and a direct conversation, not a price table. Real numbers live on the dedicated `pricing.html` page instead. Don't add specific dollar amounts to the homepage without being asked.
+* **`pricing.html`** — two flat-fill price cards (`.price-card`): "The Build" ($250 founding-client rate, struck-through $400&ndash;500 list price, one-time) and "The Upkeep" ($29/mo or $290/yr). Below that, an explicit "what's not included" scope note (redesigns/new features/integrations quoted separately, $150&ndash;300) and a "you own it, always" trust strip (domain ownership, no lock-in, 48-hour edit turnaround) — these all come directly from the pricing-model conversation with the site owner and shouldn't be renegotiated without being asked. The `#reserve` section is the payment CTA (see Content status below for its current placeholder state).
 
 ## Content status — what's real vs. placeholder
 
@@ -31,8 +32,11 @@ Real:
 * Iroquois Lanes & Pro Shop facts on `/work/iroquois-lanes.html` (address, phone, offerings) — pulled from public directory listings (Yelp, Yellow Pages, Yahoo Local) since the business has no site of its own yet. Marked with an explicit placeholder-note on the page since it's directory data, not owner-supplied.
 * MK Soap's current storefront link (mksoap.com) on `/work/mk-soap.html` — real, live link.
 * The contact email (mikewkennedy@gmail.com) — real, but likely a placeholder until a studio-specific address (e.g. hello@rip-studio.com) exists once the domain is registered.
+* The build/upkeep prices themselves ($250 founding rate / $400&ndash;500 list, $29/mo or $290/yr, $150&ndash;300 for out-of-scope work) — these are the real, decided numbers from the pricing-model conversation, not placeholders.
 
 Placeholder / pending:
+
+* **The "Reserve your build" payment button on `pricing.html`** (`#reserve` section) currently links to a `mailto:` address, not a real payment processor. This is a functioning stopgap, not the final CTA — swap it for a real hosted payment link (Stripe Payment Link, PayPal.me, Venmo, or Square, whichever the site owner sets up) as soon as one exists. There's an HTML comment marking the exact spot in `pricing.html`.
 
 * The arboretum project (`/work/arboretum.html`) — name, location, and all details are placeholder text pending the site owner's decisions. Don't invent a name for it.
 * All photography — no real photos yet anywhere on this site; the tombstone hero is pure CSS, no image assets exist in `images/` yet.
