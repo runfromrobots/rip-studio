@@ -29,6 +29,10 @@ Plain HTML/CSS/JS. No React, no bundler, no dependencies. Fonts via Google Fonts
 * **The `#reserve-form`** on `pricing.html` (business name, contact name, email, phone, need, message) submits via a JS handler in `script.js` that builds a `mailto:` link from the field values and navigates to it — no backend, no third-party form service. This is a deliberate, working no-build-step solution, not a placeholder to be "fixed" — if a real form backend (e.g. Formspree) is wanted later for a proper submissions dashboard, that's an upgrade to raise with the site owner, not something to silently swap in.
 * **`ai-approach.html`** — the site's AI stance/values page, added at the site owner's explicit request to mirror mikewkennedy.com's own AI position (human judgment drives every decision; AI, specifically Claude Code, is only ever the execution tool that turns an already-made decision into working code). Structured as a centered `.pricing-hero`-style intro, two `.project-copy` prose sections ("The Stance," "In Practice"), a `.trust-strip` contrasting "What stays human" vs. "What AI builds," and a closing section linking to mikewkennedy.com as further reading. Linked from the footer on every page ("Our Approach to AI," not the main nav — same restrained-nav convention as everything else) and from a line in the homepage's About section. This is a values statement, not a tutorial — don't turn it into a step-by-step "how to use Claude Code" walkthrough like mikewkennedy.com's `how-this-site-was-made.html`; that's a different page with a different job.
 
+## Analytics
+
+* Microsoft Clarity (session recordings, heatmaps) is loaded on every page, as early as possible in `<head>` (right after the opening `<head>` tag, before `<meta charset>`), per Clarity's own setup guidance. Project ID `ygneg6dxny` is shared with mikewkennedy.com's repo/site deliberately, so both sites' sessions land in one Clarity dashboard rather than two separate ones — don't give this site its own separate Clarity project without being asked. No Vercel Analytics here (mikewkennedy.com has it; this site doesn't yet).
+
 ## Content status — what's real vs. placeholder
 
 Real:
