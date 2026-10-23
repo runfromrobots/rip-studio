@@ -1,7 +1,9 @@
 /* RIP Studio — design tokens
    Palette: flash-sheet paper, ink black, one fluorescent accent (+ one sparing secondary).
-   Type: blackletter for the wordmark/tombstone only, bold condensed poster face for headers,
-   plain sans for body, mono for flash-sheet numbering and labels. */
+   Type: one bold condensed poster face (Anton) for the wordmark, tombstone, and all headings —
+   deliberately consolidated from an earlier separate script/blackletter wordmark font, which kept
+   drifting out of sync with its Google Fonts import and silently falling back to generic serif.
+   Plain sans for body, mono for flash-sheet numbering and labels. */
 
 :root {
   --paper: #EFE6D3;
@@ -13,7 +15,7 @@
   --flash-2: #C6FF3D;     /* secondary accent — acid green, used sparingly */
   --line: rgba(22, 19, 15, 0.14);
 
-  --font-tombstone: 'UnifrakturCook', serif;
+  --font-tombstone: 'Anton', sans-serif;  /* alias of --font-display — wordmark/tombstone share the headline face, not a separate font */
   --font-display: 'Anton', sans-serif;
   --font-body: 'Inter', sans-serif;
   --font-mono: 'IBM Plex Mono', monospace;
@@ -68,7 +70,7 @@ a { color: inherit; }
 .brand {
   font-family: var(--font-tombstone);
   font-size: 1.75rem;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.04em;
   text-decoration: none;
   color: var(--ink);
 }
@@ -153,7 +155,8 @@ a { color: inherit; }
 }
 .tombstone-rip {
   font-family: var(--font-tombstone);
-  font-size: 3.25rem;
+  font-size: 3rem;
+  letter-spacing: 0.04em;
   line-height: 1;
   color: #FFFFFF;
 }
