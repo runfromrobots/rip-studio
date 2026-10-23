@@ -10,12 +10,11 @@
   --paper-raised: #E7DCC4;
   --ink: #16130F;
   --ink-soft: #4A443B;
-  --stone: #3B3934;       /* tombstone fill — dark warm gray, no stroke */
   --flash: #FF2F5E;       /* primary accent — flash-sheet red, pushed fluorescent */
   --flash-2: #C6FF3D;     /* secondary accent — acid green, used sparingly */
   --line: rgba(22, 19, 15, 0.14);
 
-  --font-tombstone: 'Anton', sans-serif;  /* alias of --font-display — wordmark/tombstone share the headline face, not a separate font */
+  --font-wordmark: 'Anton', sans-serif;  /* alias of --font-display — the header wordmark shares the headline face, not a separate font */
   --font-display: 'Anton', sans-serif;
   --font-body: 'Inter', sans-serif;
   --font-mono: 'IBM Plex Mono', monospace;
@@ -84,7 +83,7 @@ a { color: inherit; }
   border-bottom: 1px solid var(--line);
 }
 .brand {
-  font-family: var(--font-tombstone);
+  font-family: var(--font-wordmark);
   font-size: 1.75rem;
   letter-spacing: 0.04em;
   text-decoration: none;
@@ -138,7 +137,6 @@ a { color: inherit; }
 @media (max-width: 900px) {
   .hero { grid-template-columns: 1fr; text-align: center; }
   .hero-actions { justify-content: center; }
-  .tombstone { margin: 0 auto; }
 }
 .eyebrow {
   font-family: var(--font-mono);
@@ -160,46 +158,70 @@ a { color: inherit; }
 .hero-points { max-width: 40ch; margin-bottom: var(--space-4); }
 @media (max-width: 900px) { .hero-points { max-width: none; margin-left: auto; margin-right: auto; text-align: left; } }
 
-/* Tombstone motif */
-.tombstone {
-  width: 260px;
-  height: 320px;
-  background: var(--stone);
-  border: none;
-  border-radius: 130px 130px 12px 12px;
-  box-shadow: 8px 8px 0 var(--ink);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-2);
-  position: relative;
-}
-.tombstone-rip {
-  font-family: var(--font-tombstone);
-  font-size: 3rem;
-  letter-spacing: 0.04em;
-  line-height: 1;
-  color: #FFFFFF;
-}
-.tombstone-sub {
+/* Hero collage — a scattered pile of live project previews, replacing the old static tombstone
+   graphic. Each card is a real link (<a>) to that project's detail page, not just decorative. */
+.chip {
   font-family: var(--font-mono);
   font-size: 0.6875rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.72);
-  text-align: center;
-  padding: 0 var(--space-3);
-}
-.tombstone-banner {
-  font-family: var(--font-mono);
-  font-size: 0.6875rem;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   background: var(--flash);
   color: var(--paper);
-  padding: 0.35rem 0.9rem;
+  padding: 0.15rem 0.5rem;
   border-radius: 999px;
+  position: absolute;
+  top: -12px;
+  right: -10px;
+  z-index: 2;
+}
+.collage { position: relative; height: 420px; }
+.chrome {
+  position: absolute;
+  display: block;
+  text-decoration: none;
+  color: var(--ink);
+  background: var(--paper-raised);
+  border: 2px solid var(--ink);
+  border-radius: var(--radius);
+  box-shadow: 4px 4px 0 var(--ink);
+  overflow: visible;
+  cursor: pointer;
+  width: var(--w);
+  left: var(--x);
+  top: var(--y);
+  z-index: var(--z);
+  transform: rotate(var(--r));
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+.chrome:hover { transform: rotate(0deg) scale(1.07) !important; box-shadow: 8px 8px 0 var(--ink); z-index: 50 !important; }
+.chrome-bar {
+  height: 24px;
+  background: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0 9px;
+  border-radius: calc(var(--radius) - 2px) calc(var(--radius) - 2px) 0 0;
+}
+.chrome-bar span { width: 7px; height: 7px; border-radius: 50%; background: var(--paper); opacity: 0.55; }
+.chrome-thumb {
+  position: relative;
+  overflow: hidden;
+  background: var(--paper);
+  border-radius: 0 0 calc(var(--radius) - 2px) calc(var(--radius) - 2px);
+}
+.chrome-thumb iframe {
+  position: absolute; top: 0; left: 0; border: 0; pointer-events: none;
+  width: 400%; height: 400%; transform: scale(0.25); transform-origin: top left;
+}
+/* The scattered collage uses desktop-tuned pixel offsets (--x/--y/--r) that don't scale down —
+   below 900px, drop the scatter entirely and stack the cards as a plain centered list instead.
+   This override must come after the base .collage/.chrome rules above, not inside the earlier
+   .hero media query — equal-specificity rules are resolved by source order, and an unconditional
+   rule appearing later always wins over an earlier media-query rule regardless of viewport. */
+@media (max-width: 900px) {
+  .collage { height: auto; width: 100%; margin: var(--space-5) auto 0; display: flex; flex-direction: column; align-items: center; gap: var(--space-4); }
+  .chrome { position: relative; left: 0; top: 0; width: 100%; max-width: 320px; transform: none !important; }
 }
 
 /* Section headings */
